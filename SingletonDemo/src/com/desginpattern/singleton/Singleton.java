@@ -4,7 +4,7 @@ public final class Singleton {
 
 	private static int counter=0;
 	
-	/*step2: declare a static private variable which returns the instance state of the object*/
+	/*step2: declare a static private variable which returns the instance state of the object-Shraddha chutiya hais*/
 	private static Singleton instance=null;
 	
 	/*step1 : let us make this constructor private. 
