@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Shopping list</title>
+</head>
+<body>
+    <h1>ShoppingList</h1>
+    <ul></ul>
+
+    <script>
+        const electron = require('electron');
+        const {ipcRenderer} = electron;
+        const ul =  document.querySelector('ul');
+
+        //Add item to the list
+        ipcRenderer.on("item:add", function(event,item){
+            const li = document.createElement('li');
+            const textNode = document.createTextNode(item);
+            li.appendChild(textNode);
+            ul.appendChild(li);
+        });
+
+        //clear all the items from the list
+        ipcRenderer.on("item:clear", function(){
+            ul.innerHTML = ''; 
+        });
+
+    </script>
+</body>
+</html>

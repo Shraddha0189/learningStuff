@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AddItemsToShoppingList</title>
+</head>
+<body>
+    <form>
+        <div>
+            <label>Enter Item:</label>
+            <input type="text" id="item" autofocus>
+        </div>
+        <button type="submit">Add Item</button>
+    </form>
+
+    <script>
+    
+        const electron = require('electron');
+        //we will use ipc renderer to sent the data from html file to main.js
+        const {ipcRenderer}=  electron;
+
+        const form =   document.querySelector('form');
+        form.addEventListener('submit',submitForm);
+
+        function submitForm(event)
+        {
+            event.preventDefault();
+            const item = document.querySelector('#item').value;
+            ipcRenderer.send("item:add",item); //to catch this data in js file we need to use ipcMain in man.js
+        }
+
+    </script>
+</body>
+</html>
