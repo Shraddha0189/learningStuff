@@ -9,7 +9,14 @@
       "windows": {
         "command": "C:\\Program Files\\AdoptOpenJDK\\jdk-11.0.8.10-hotspot\\bin\\javac.exe"
       },
-      "args": ["${file}"]
+      "args": [
+        "${file}"
+      ],
+      "problemMatcher": [],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
     },
     {
       "label": "JR",
@@ -17,8 +24,11 @@
       "windows": {
         "command": "C:\\Program Files\\AdoptOpenJDK\\jdk-11.0.8.10-hotspot\\bin\\java.exe"
       },
-
-      "args": ["-cp", "${fileDirname}", "${fileBasenameNoExtension}"]
+      "args": [
+        "-cp",
+        "${fileDirname}",
+        "${fileBasenameNoExtension}"
+      ]
     }
   ]
 }
