@@ -12,7 +12,7 @@
   "author": "Shraddha Singh",
   "license": "ISC",
   "dependencies": {
-    "electron": "^9.2.0",
+    "electron": "^11.5.0",
     "requirejs": "^2.3.6"
   },
   "devDependencies": {
